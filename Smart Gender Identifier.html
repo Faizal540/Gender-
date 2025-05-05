@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)file:///C:/Users/USER/Downloads/TO-DO.HTML2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Smart Gender Identifier</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; background: #f0f0f0; }
+    input, button { padding: 12px; font-size: 16px; width: 300px; }
+    #result { margin-top: 20px; font-weight: bold; font-size: 18px; color: #333; }
+  </style>
+</head>
+<body>
+  <h2>🧠 Gender Identifier (Full Name Match)</h2>
+  <input id="nameInput" placeholder="Type full name..." oninput="checkGender()">
+  <div id="result"></div>
+
+  <script>
+    // Local gender list - full name format
+    const maleFullNames = [
+      "dr. obasa a.i", "faisal", "musa", "muhammad nasir", "abdullahi shuaibu"
+    ];
+
+    const femaleFullNames = [
+      "mrs. mairo shuaibu", "sumayya", "aisha", "maryam ", "maryam zainab", "rukayya mairo"
+    ];
+
+    function checkGender() {
+      const input = document.getElementById("nameInput").value.trim().toLowerCase();
+      const resultDiv = document.getElementById("result");
+
+      if (input.length === 0) {
+        resultDiv.innerText = "";
+        return;
+      }
+
+      if (femaleFullNames.includes(input)) {
+        resultDiv.innerText = `This name is: FEMALE 👧`;
+      } else if (maleFullNames.includes(input)) {
+        resultDiv.innerText = `This name is: MALE 👦`;
+      } else {
+        resultDiv.innerText = `Gender not found. You can add "${input}" to the name list.`;
+      }
+    }
+  </script>
+
+
+
+
+
+</body></html>
